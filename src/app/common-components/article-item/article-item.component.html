@@ -1,0 +1,12 @@
+<div class="article-item clear-float h0 margin-bottom-sm">
+  <img src="{{articleList.url}}" class="float-left">
+  <div class="detail margin-left-md float-left">
+    <h3>{{articleList.name}}</h3>
+    <ul class="margin-top-xs">
+      <li class="h4 font-color-green margin-left-sm font-color-global-lighter font-hover-color-green pointer"
+          *ngFor="let articleItem of articleList.article" [routerLink]="['/article-detail',articleItem.id]">
+        {{articleItem.name}}
+      </li>
+    </ul>
+  </div>
+</div>

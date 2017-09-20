@@ -1,0 +1,21 @@
+<div class="wapper background-color-white margin-height-sm padding-sm">
+  <h1>{{toolDetail.title}}</h1>
+  <ul>
+    <li *ngFor="let question of toolDetail.questions;let qi=index">
+      <h4 class="margin-height-sm">{{question.title}}（{{question.type == 1 ? '单选':'多选'}}）</h4>
+      <ul class="h4 font-color-global-lighter margin-height-sm">
+        <li *ngFor="let answer of question.answers;let ai=index" class="inline-block margin-right-md">
+          <input type="{{question.type == 1 ? 'radio':'checkbox'}}" name="{{'question_'+qi}}"
+                 id="{{'question_'+qi+'_answer_'+ai}}" [checked]="ai==0"
+                 value="{{question.id + '-' + answer.id}}">
+          <label for="{{'question_'+qi+'_answer_'+ai}}">{{answer.title}}</label>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="text-center pointer background-color-yellow radius-sm font-color-white h4 padding-height-xs"
+       style="width: 5em;"
+       (click)="showAlert()">
+    提交
+  </div>
+</div>

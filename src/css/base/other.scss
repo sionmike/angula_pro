@@ -1,0 +1,52 @@
+.clear-float {
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+    height: 0;
+    width: 0;
+  }
+}
+
+.wapper {
+  @extend .margin-width-auto;
+  width: 16rem;
+  box-sizing: border-box;
+}
+
+.title {
+  @extend .padding-left-xs;
+  height: remSize(30);
+  line-height: remSize(30);
+  border-left: solid 3px map_get($baseColorMap, 'green');
+}
+.line-height{
+  line-height:remSize(30);
+}
+.background-color-gray-n{
+  white-space:normal;
+  background-color:#f6f6f6;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.list-style-type-disc li {
+  list-style-type: disc;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.font-hover-underline:hover {
+  text-decoration: underline;
+}
+
+.hover-scale-bigger {
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

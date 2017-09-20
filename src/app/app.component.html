@@ -1,0 +1,3 @@
+<yh-common-header [showMenu]="currentUrl=='/home'" *ngIf="currentUrl!='/login' && currentUrl!='/register' && currentUrl!='/region-picker' && currentUrl!='/street-picker/1' && currentUrl!='/street-picker/2' && currentUrl!='/street-picker/3' && currentUrl!='/street-picker/0'"></yh-common-header>
+<router-outlet></router-outlet>
+<yh-common-footer *ngIf="currentUrl!='/login' && currentUrl!='/register' && currentUrl!='/region-picker' && currentUrl!='/street-picker/1' && currentUrl!='/street-picker/2' && currentUrl!='/street-picker/3' && currentUrl!='/street-picker/0'"></yh-common-footer>

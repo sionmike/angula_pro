@@ -1,0 +1,17 @@
+@import "../../../css/forNG2";
+
+header {
+  li {
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    div {
+      width: remSize(130);
+    }
+  }
+}
+
+#order-empty-img {
+  width: remSize(100);
+  height: remSize(100);
+}

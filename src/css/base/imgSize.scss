@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.img-full {
+  width: 16rem;
+}
+
+@each $name2, $imgSize in $imgSizeMap {
+  @each $name1, $sqSize in $sq {
+    @each $paddingName, $paddingSize in $paddingSizeMap {
+      .with-img-#{$name1}-#{$name2}-#{$paddingName} {
+        width: 16rem - $paddingSize * 3 - $imgSize * $sqSize;
+      }
+    }
+    .img-width-#{$name1}-#{$name2} {
+      width: $sqSize * $imgSize;
+      display: block;
+      //font-size: 0;
+    }
+    .img-height-#{$name1}-#{$name2} {
+      height: $imgSize;
+      line-height: $imgSize;
+      display: block;
+      //font-size: 0;
+    }
+    .img-#{$name1}-#{$name2} {
+      @extend .img-height-#{$name1}-#{$name2}, .img-width-#{$name1}-#{$name2};
+      display: block;
+      //font-size: 0;
+    }
+  }
+}

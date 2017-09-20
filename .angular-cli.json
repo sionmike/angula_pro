@@ -1,0 +1,71 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "hf-pc"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "yh",
+      "styles": [
+        "./assets/css/bootstrap/css/bootstrap.min.css",
+        "./assets/css/swiper/swiper.css",
+        "./assets/css/sweetalert/sweetalert.css",
+        "./assets/css/iCheck/custom.css",
+        "./assets/css/datetimepicker/bootstrap-datetimepicker.min.css",
+        "styles.scss"
+      ],
+      "scripts": [
+        "./assets/js/jquery-2.1.1.js",
+        "./assets/js/swiper/swiper.js",
+        "./assets/js/sweetalert/sweetalert.min.js",
+        "./assets/js/iCheck/icheck.min.js",
+        "./assets/js/qrcode/qrcode.min.js",
+        "./assets/js/datetimepicker/bootstrap-datetimepicker.js",
+        "./assets/js/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "sta": "environments/environment.sta.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json"
+    },
+    {
+      "project": "src/tsconfig.spec.json"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "component": {}
+  }
+}

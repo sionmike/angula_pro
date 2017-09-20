@@ -1,0 +1,123 @@
+@import "../../../css/forNG2";
+
+.service-main-info {
+  img {
+    height: remSize(100);
+    width: remSize(200);
+  }
+  > div {
+    width: 11.7rem;
+  }
+  .clear-float .block {
+    line-height: remSize(36);
+  }
+}
+
+label {
+  font-weight: normal;
+  margin: 0 0 0 0.5em;
+  line-height: 22px;
+}
+
+.date {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: remSize(6);
+  width: remSize(200);
+  overflow: hidden;
+  background: url('../../../assets/img/icon_date.png') no-repeat right;
+  background-size: remSize(20) remSize(20);
+  background-origin: content-box;
+}
+
+.time {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: remSize(6);
+  width: remSize(200);
+  overflow: hidden;
+  background: url('../../../assets/img/icon_time.png') no-repeat right;
+  background-size: remSize(15) remSize(15);
+  background-origin: content-box;
+}
+
+.padding-height-xxs {
+  padding-top: remSize(5);
+  padding-bottom: remSize(5);
+}
+
+.user-name {
+  position: relative;
+  width: remSize(120);
+  .img-choosed {
+    position: absolute;
+    left: remSize(0);
+    top: remSize(2);
+    width: remSize(120);
+    height: remSize(30);
+  }
+}
+$animateTime:.25s;
+.layer{
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  z-index: 100;
+  animation: blockShow $animateTime 1;
+  .order-modal {
+    background-color:#fff;
+    z-index: 100;
+    position: fixed;
+    width: remSize(480);
+    margin-top: 10%;
+    left: 50%;
+    margin-left: remSize(-240);
+    box-shadow: 0 remSize(2) remSize(2) remSize(1) rgba(0, 0, 0, 0.5);
+    animation: blockShow $animateTime 1;
+    &.hideAnimate {
+      animation: blockHide $animateTime 1;
+    }
+    .modal-header{
+      background-color: rgb(246, 246, 246);
+      .modal-header-title{
+        margin-left: remSize(5);
+      }
+      .modal-header-close{
+        padding-right: remSize(2);
+      }
+    }
+    .modal-body{ }
+    .modal-footer{}
+  }
+}
+@keyframes blockShow {
+  0% {
+    opacity: 0;
+  }
+  25%{
+    opacity: 0.25;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  75%{
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blockHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

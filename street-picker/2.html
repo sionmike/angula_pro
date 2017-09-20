@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./kartograph/jquery.min.js"></script>
+  <script src="./kartograph/raphael-min.js"></script>
+  <script src="./kartograph/kartograph.js"></script>
+  <script src="./js/m-picker.js"></script>
+  <link href="./css/m-picker.css" rel="stylesheet">
+  <style>
+    #map svg {
+      background-image: url('./img/luyang_s.png');
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="map" style="position: relative;"></div>
+</div>
+<script>
+
+  initMap('luyang','street');
+  var sr = [
+    {name:'大杨镇社区',x:191,y:290},
+    {name:'林店街道社区',x:375,y:363},
+    {name:'杏林街道社区',x:684,y:272},
+    {name:'杏花村街道社区',x:639,y:428},
+    {name:'四里河街道社区',x:547,y:571},
+    {name:'双岗街道社区',x:998,y:220},
+    {name:'海棠街道社区',x:899,y:398},
+    {name:'亳州路街道社区',x:800,y:536},
+    {name:'逍遥津街道社区',x:1082,y:419},
+    {name:'三孝口街道社区',x:1012,y:615}
+  ];
+  addStreetText(sr,'luyang');
+</script>
+</body>
+

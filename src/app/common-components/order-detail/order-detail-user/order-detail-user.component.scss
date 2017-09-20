@@ -1,0 +1,16 @@
+@import "../../../../css/forNG2";
+
+.star {
+  background-image: url('../../../../assets/img/star_01.png');
+  width: remSize(20);
+  height: remSize(20);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.star-active {
+  background-image: url('../../../../assets/img/star_02.png');
+  width: remSize(20);
+  height: remSize(20);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

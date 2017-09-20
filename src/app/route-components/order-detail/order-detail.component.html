@@ -1,0 +1,20 @@
+<div class="wapper text-center h0 padding-height-sm" style="background-color: #fffdf0" *ngIf="orderDetail.status.statusDisplayMsg == '待支付'">
+  <span class="h4 font-color-global-lighter">请在30分钟内支付，超时订单自动取消！剩余{{ time | date:'mm:ss'}}</span>
+</div>
+<div class="wapper margin-bottom-md padding-md background-color-white {{orderDetail.status.statusDisplayMsg != '待支付'? 'margin-top-md':''}}" *ngIf="orderDetail.item.title">
+  <!--<h2 class="title padding-left-sm">{{orderDetail.item.title}}</h2>-->
+  <h2 class="title padding-left-sm">订单信息</h2>
+  <div class="clear-float margin-top-sm border-line-bottom border-color-gray">
+    <h4 class="font-color-global-lighter">订单编号：{{orderDetail.orderNo}}</h4>
+    <h4 class="font-color-global-lighter margin-height-sm">
+      <span>服务时间：{{orderDetail.servingTime | date:'yyyy-MM-dd'}}</span>
+      <span class="margin-left-md">服务地址：{{orderDetail.patient.address}}</span>
+    </h4>
+  </div>
+  <yh-order-list [orderList]="orderList" [type]="'detail'"></yh-order-list>
+</div>
+<yh-order-refund [orderDetail]="orderDetail" *ngIf="orderDetail.status.statusDisplayMsg == '退款中' && orderDetail.status.content.title"></yh-order-refund>
+<yh-order-detail-user *ngIf="orderDetail.status.statusDisplayMsg == '服务中' || orderDetail.status.statusDisplayMsg == '待评价' || orderDetail.status.statusDisplayMsg == '已完成' || orderDetail.status.statusDisplayMsg == '退款申请中'" [orderDetail]="orderDetail"></yh-order-detail-user>
+<yh-order-close [orderDetail]="orderDetail" *ngIf="orderDetail.status.statusDisplayMsg == '已关闭'"></yh-order-close>
+<yh-order-cancel [orderDetail]="orderDetail" *ngIf="orderDetail.status.statusDisplayMsg == '已取消'"></yh-order-cancel>
+<yh-service-action *ngIf="orderDetail.status.statusDisplayMsg != '待支付' && orderDetail.status.statusDisplayMsg != '待接单' && orderDetail.status.statusDisplayMsg != '已关闭' && orderDetail.status.statusDisplayMsg != '已取消'" [orderDetail]="orderDetail"></yh-service-action>

@@ -1,0 +1,47 @@
+<div class="wapper margin-height-md padding-md background-color-white service-main-info clear-float h0"
+     *ngIf="serviceDetail.img">
+  <img src="{{serviceDetail.img}}" class="float-left radius-sm margin-right-md">
+  <div class="float-left">
+    <h2 class="clear-float">
+      <span class="float-left block">{{serviceDetail.title}}</span>
+    </h2>
+    <h4 class="margin-height-sm font-color-global-lighter">
+      <span class="font-color-green">&#xe68e;</span>
+      <span class="font-color-green">耗时{{serviceDetail.time}}分钟</span>
+    </h4>
+    <h4 class="margin-height-sm font-color-global-lighter">服务价格：<span class="font-color-yellow">{{(serviceDetail.price/100).toFixed(2)}}元</span>
+    </h4>
+    <a
+      class="radius-sm background-color-yellow font-color-white padding-height-xs padding-width-sm h4 float-left pointer"
+      [routerLink]="['/order-submit',serviceDetail.id]">立即预约</a>
+  </div>
+</div>
+<div class="wapper margin-height-md padding-md background-color-white" *ngIf="serviceDetail.detail">
+  <h2 class="title padding-left-sm">服务详情</h2>
+  <p class="h4 margin-top-sm">{{serviceDetail.detail}}</p>
+  <div class="margin-top-xs" [innerHtml]="serviceDetail.serviceDetail"></div>
+</div>
+<div class="wapper margin-height-md padding-md background-color-white" *ngIf="serviceDetail.action.length > 0">
+  <h2 class="title padding-left-sm">服务步骤</h2>
+  <ul>
+    <li class="clear-float margin-top-sm {{i!=0?'border-line-top border-color-global-base padding-top-sm':''}}"
+        *ngFor="let step of serviceDetail.action;let i = index">
+      <div class="icon font-color-green float-left margin-right-sm" [ngSwitch]="i">
+        <span *ngSwitchCase="0">&#xe69e;</span>
+        <span *ngSwitchCase="1">&#xe6a6;</span>
+        <span *ngSwitchCase="2">&#xe6a7;</span>
+        <span *ngSwitchCase="3">&#xe69f;</span>
+        <span *ngSwitchCase="4">&#xe6a0;</span>
+        <span *ngSwitchCase="5">&#xe6a1;</span>
+        <span *ngSwitchCase="6">&#xe6a2;</span>
+        <span *ngSwitchCase="7">&#xe6a3;</span>
+        <span *ngSwitchCase="8">&#xe6a4;</span>
+        <span *ngSwitchDefault="">&#xe6a4;</span>
+      </div>
+      <div class="detail float-left">
+        <h3>{{step.title}}</h3>
+        <h5 class="font-color-global-lightest">{{step.desc}}</h5>
+      </div>
+    </li>
+  </ul>
+</div>

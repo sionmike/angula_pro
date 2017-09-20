@@ -1,0 +1,13 @@
+<div class="h0 service-item">
+  <img src="{{serviceItem.img}}">
+  <div class="detail background-color-white padding-width-sm padding-height-xs">
+    <div class="clear-float">
+      <h4 class="float-left">{{serviceItem.title}}</h4>
+      <h4 class="float-right font-color-yellow"><span>{{(serviceItem.price/100).toFixed(2)}}</span>元</h4>
+    </div>
+    <p class="overflow-line-1 h5 font-color-global-lighter">{{serviceItem.detail}}</p>
+    <div class="items background-color-black-layer padding-height-xs radius-sm" *ngIf="type == 'local'">
+      <h1 class="font-color-white items-title">即将上线</h1>
+    </div>
+  </div>
+</div>

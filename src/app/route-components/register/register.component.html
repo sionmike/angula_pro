@@ -1,0 +1,68 @@
+<div class="login-header">
+  <img class="margin-left-md" src="../../../assets/img/hf.png"/>
+</div>
+<div class="layer">
+  <div class="layer-wapper wapper">
+    <div class="h0 clear-float">
+      <div class="login-layer float-left background-color-white">
+        <h1 class="register-title font-color-green">注册</h1>
+        <div class="user-phone text-center margin-top-sm">
+          <input type="text"
+                 class="input-width input-height font-color-global-lighter h3 border-line border-color-gray background-color-gray radius-sm"
+                 [(ngModel)]="registerData.phone" placeholder="请输入手机号码" required disabled>
+        </div>
+        <div class="register-forms text-center margin-top-sm">
+          <input type="text"
+                 class="input-width input-height font-color-global-lighter h3 border-line border-color-gray background-color-gray radius-sm"
+                 [(ngModel)]="registerData.name" placeholder="请输入姓名" required>
+        </div>
+        <div class="register-forms h0 margin-top-sm margin-left-llg register-sex">
+          <input class="padding-left-xs" type="radio" checked name="sex" id="sex1" value="1">
+          <label class="h3 font-color-global-lightest margin-left-xs" for="sex1">男</label>
+          <div class="padding-left-sm inline-block">
+            <input type="radio" name="sex" id="sex0" value="0">
+            <label class="h3 font-color-global-lightest margin-left-xs" for="sex0">女</label>
+          </div>
+        </div>
+        <div class="register-forms text-center margin-top-sm">
+          <input type="date"
+                 class="input-width input-height font-color-global-lighter h3 border-line border-color-gray background-color-gray radius-sm"
+                 [(ngModel)]="registerData.birthday" placeholder="请输入出生日期" required>
+        </div>
+        <div class="register-forms text-center margin-top-sm">
+          <input type="text"
+                 class="input-width input-height font-color-global-lighter h3 border-line border-color-gray background-color-gray radius-sm"
+                 [(ngModel)]="registerData.idCard" placeholder="请准确填写身份证号" required>
+        </div>
+        <div class="register-forms register-address margin-top-sm margin-left-llg">
+          <span class="register-address-province h3 font-color-global-lightest input-height">安徽省</span>
+          <span class="register-address-province h3 font-color-global-lightest input-height margin-left-xs">合肥市</span>
+          <select
+            class="time h3 font-color-global-base margin-left-md border-line border-color-gray padding-width-xs padding-height-xxs"
+            [(ngModel)]="registerData.country">
+            <option value="" disabled selected>点击选择区</option>
+            <option *ngFor="let area of areas;" [value]="area.area">{{area.area}}</option>
+          </select>
+        </div>
+        <div class="register-forms text-center margin-top-sm">
+          <input type="text"
+                 class="input-width input-height font-color-global-lighter h3 border-line border-color-gray background-color-gray radius-sm"
+                 [(ngModel)]="registerData.detailedAddress" placeholder="请填写详细地址">
+        </div>
+        <div class="user-submit text-center">
+          <a class="h2 inline-block user-login radius-sm background-color-green font-color-white padding-height-xxs pointer"
+             (click)="register()">确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="login-footer clear-float  background-color-white border-color-gray border-line-top">
+  <p class="h5 font-color-global-lightest float-left margin-left-md padding-top-sm">
+    优护家®属于北京优护创智健康科技有限责任公司旗下品牌 邮箱：<a class="font-color-global-lightest" style="text-decoration: underline;"
+                                     href="mailto:hezuo@youhujia.com">hezuo@youhujia.com</a><br>
+    © 2015-2017 Youhujia.com 版权所有<br>
+    京ICP备15054445-1号<br>
+  </p>
+  <img class="float-right margin-right-md" src="../../../assets/img/yhj.png"/>
+</div>

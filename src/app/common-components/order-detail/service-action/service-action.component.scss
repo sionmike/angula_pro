@@ -1,0 +1,16 @@
+@import "../../../../css/forNG2";
+
+ul {
+  li {
+    .icon {
+      width: remSize(30);
+      font-size: remSize(30);
+    }
+    .detail * {
+      line-height: remSize(30);
+    }
+    .action-title{
+      width:remSize(500);
+    }
+  }
+}

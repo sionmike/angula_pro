@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+@each $name, $size in $radiusSizeMap {
+  .radius-#{$name} {
+    border-radius: $size;
+  }
+}

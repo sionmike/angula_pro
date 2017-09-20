@@ -1,0 +1,161 @@
+<div class="wapper margin-height-md padding-md background-color-white service-main-info clear-float h0"
+     *ngIf="serviceDetail.title">
+  <img src="{{serviceDetail.img}}" class="float-left radius-sm margin-right-md">
+  <div class="float-left">
+    <h2 class="clear-float">
+      <span class="float-left block">{{serviceDetail.title}}</span>
+      <span
+        class="padding-left-md float-left block font-color-yellow h3">{{(serviceDetail.price/100).toFixed(2)}}元</span>
+    </h2>
+    <p class="h4 overflow-line-2 margin-top-xs text-left">{{serviceDetail.detail}}</p>
+  </div>
+</div>
+<div class="wapper margin-height-md padding-md background-color-white">
+  <h2 class="title padding-left-sm">预约信息</h2>
+  <div class="clear-float">
+    <h4 class="margin-height-sm font-color-global-lighter">
+      <span class="float-left padding-height-xxs">患者姓名</span>
+      <a
+        class="radius-sm background-color-green font-color-white padding-height-xxs padding-width-sm h4 float-right pointer"
+        (click)="onAddAddressClick()">
+        <span class="h6 font-color-white">&#xe650;</span>
+        新增患者
+      </a>
+    </h4>
+  </div>
+  <ul class="h0 margin-top-xs">
+    <li class="border-line-bottom border-color-gray padding-height-sm clear-float"
+        *ngFor="let list of patientList;let i = index;">
+      <div class="float-left">
+        <a
+          class="inline-block radius-sm background-color-white border-line border-color-gray font-color-global-lighter padding-height-xxs padding-width-xs h4 pointer user-name text-center"
+          (click)="chooseNum = i;submitData.userAddressId = list.userAddressId;">
+          {{list.name}}
+          <img *ngIf="chooseNum == i" class="img-choosed" src="assets/img/icon_choose.png"/>
+        </a>
+        <span class="h4 margin-left-sm font-color-global-lighter">{{list.name}}</span>
+        <span class="h4 margin-left-xs font-color-global-lighter">{{list.phone}}</span>
+        <span class="h4 margin-left-sm font-color-global-lighter">{{list.address.province}}{{list.address.city}}{{list.address.district}}</span>
+      </div>
+      <div class="float-right">
+        <a
+          class="radius-sm background-color-green font-color-white padding-height-xxs padding-width-sm h4 pointer"
+          (click)="onEditAddressClick(list)">
+          编辑
+        </a>
+        <a
+          class="radius-sm background-color-red font-color-white padding-height-xxs padding-width-sm h4 pointer margin-left-sm"
+          (click)="onDelAddressClick(list)">
+          删除
+        </a>
+      </div>
+    </li>
+  </ul>
+  <div class="clear-float margin-height-sm">
+    <h4 class="font-color-global-lighter">
+      预约时间
+      <select
+        class="date font-color-global-lighter margin-left-sm border-line border-color-gray padding-width-xs background-color-white padding-height-xxs"
+        (change)="onDateChangeClick($event)">
+        <option value="" disabled selected>点击选择预约日期</option>
+        <option *ngFor="let date of date;" [value]="date.date">{{date.date}}</option>
+      </select>
+      <select
+        class="time font-color-global-lighter margin-left-sm border-line border-color-gray padding-width-xs background-color-white padding-height-xxs"
+        [(ngModel)]="submitData.servingTime">
+        <option value="" disabled selected>点击选择时间</option>
+        <option *ngFor="let t of time;" [value]="t.detailTime">{{t.title}}</option>
+      </select>
+    </h4>
+  </div>
+  <div class="clear-float margin-height-sm">
+    <h4 class="font-color-global-lighter">
+      下单备注
+    </h4>
+    <textarea style="resize:none"
+              class="font-color-global-lighter border-line border-color-gray margin-top-sm h4 padding-height-xs padding-width-sm"
+              rows="3" cols="100" placeholder="对服务有疑问，以及对患者病情、护理情况的描述，请在此处填写，以供护士参考。"
+              [(ngModel)]="submitData.notes"></textarea>
+  </div>
+  <div class="clear-float margin-top-sm">
+    <a
+      class="radius-sm background-color-yellow font-color-white padding-height-xs padding-width-sm h4 float-right pointer"
+      (click)="orderSubmit()">
+      立即预约
+    </a>
+  </div>
+</div>
+<div class="layer" *ngIf="showMoadal">
+  <div class="order-modal border-line border-color-gray radius-sm h0 clear-float background-color-white">
+    <h4 class="padding-height-xs modal-header clear-float">
+      <span class="h4 font-color-global-base float-left modal-header-title" *ngIf="modalType == 'new'">新增患者</span>
+      <span class="h4 font-color-global-base float-left modal-header-title" *ngIf="modalType == 'edit'">编辑患者</span>
+      <span class="h4 float-right modal-header-close pointer" (click)="showMoadal = false;">&#xe65a;</span>
+    </h4>
+    <div class="modal-body padding-width-md padding-height-sm">
+      <h4 class="margin-height-sm font-color-global-lighter">姓名：
+        <input id="userName" style="width:10em;" type="text"
+               [(ngModel)]="addressFormData.name" placeholder="患者姓名"
+               class="border-color-global-base radius-xs border-line h5 font-color-global-lighter radius-sm">
+      </h4>
+      <h4 class="margin-height-sm font-color-global-lighter">性别：
+        <span>
+        <input type="radio" name="sex" id="sex1" value="男">
+        <label for="sex1">男</label>
+      </span>
+        <span class="margin-left-sm">
+        <input class="margin-left-sm" type="radio" name="sex" id="sex0" value="女">
+        <label for="sex0">女</label>
+      </span>
+      </h4>
+      <h4 class="margin-height-sm font-color-global-lighter">出生日期：
+        <input id="serviceTime" style="width:12em;" type="date"
+               [(ngModel)]="addressFormData.birthday" placeholder="出生日期"
+               class="border-color-global-base radius-xs border-line h5 font-color-global-lighter radius-sm">
+      </h4>
+      <h4 class="margin-height-sm font-color-global-lighter">联系方式：
+        <input id="userPhone" style="width:12em;" type="tel"
+               [(ngModel)]="addressFormData.phone" placeholder="联系方式"
+               class="border-color-global-base radius-xs border-line h5 font-color-global-lighter radius-sm">
+      </h4>
+      <h4 class="margin-height-sm font-color-global-lighter">
+        服务地址：
+        <span class="font-color-global-lightest h4 margin-left-xs">安徽省</span>
+        <span class="font-color-global-lightest h4 margin-left-sm">合肥市</span>
+        <select
+          class="time font-color-global-lighter margin-left-sm border-line border-color-gray padding-width-xs background-color-white padding-height-xxs"
+          style="width: 10em;" [(ngModel)]="addressFormData.address.district">
+          <option value="" disabled selected>点击选择区域</option>
+          <option *ngFor="let area of areas;" [value]="area.area">{{area.area}}</option>
+        </select>
+      </h4>
+      <h4 class="margin-height-sm font-color-global-lighter">详细地址：
+        <input id="addressDetail" style="width:12em;" type="text"
+               [(ngModel)]="addressFormData.address.addressDetail" placeholder="详细地址"
+               class="border-color-global-base radius-xs border-line h5 font-color-global-lighter radius-sm">
+      </h4>
+      <h4 class="font-color-global-lighter">
+        患者关系：
+        <select
+          class="time font-color-global-lighter border-line border-color-gray padding-width-xs background-color-white padding-height-xxs"
+          style="width: 10em;" [(ngModel)]="addressFormData.relation">
+          <option value="" disabled selected>点击选择关系</option>
+          <option *ngFor="let relation of relationList;" [value]="relation.id">{{relation.relation}}</option>
+        </select>
+      </h4>
+    </div>
+    <div class="modal-footer padding-height-sm">
+      <a
+        class="radius-sm border-line border-color-gray font-color-global-lighter font-color-global-lightest padding-height-xxs padding-width-sm h4 float-right pointer"
+        style="background-color: #e2e2e2;"
+        (click)="showMoadal = false;modalType = '';">
+        取消
+      </a>
+      <a
+        class="radius-sm background-color-green font-color-white padding-height-xxs padding-width-sm h4 float-right pointer margin-right-sm"
+        (click)="onSubmit()">
+        确定
+      </a>
+    </div>
+  </div>
+</div>

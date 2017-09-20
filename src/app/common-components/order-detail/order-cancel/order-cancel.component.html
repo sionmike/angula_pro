@@ -1,0 +1,23 @@
+<div class="wapper margin-top-md padding-md background-color-white">
+  <h2 class="title padding-left-sm"> 个人信息</h2>
+  <div class="clear-float border-line-bottom border-color-gray h0 padding-height-md">
+    <span class="h4 font-color-global-lighter">
+      姓名：{{orderDetail.patient.name}}
+    </span>
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      性别：{{orderDetail.patient.sex}}
+    </span> 7
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      年龄：{{orderDetail.patient.age}}
+    </span>
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      手机号：{{orderDetail.patient.phone}}
+    </span>
+  </div>
+</div>
+<div class="wapper margin-bottom-md padding-bottom-md padding-width-md background-color-white">
+  <h2 class="title padding-left-sm">订单已取消</h2>
+  <div class="clear-float margin-top-sm">
+    <p class="h4 line-height font-color-global-lighter margin-top-sm" [innerHtml]="closeContent"></p>
+  </div>
+</div>

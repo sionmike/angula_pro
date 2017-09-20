@@ -1,0 +1,79 @@
+@charset "utf-8";
+//基础颜色
+$baseColorMap: (
+  "black":#26272B,
+  "black-a":rgba(0, 0, 0, 0.8),
+  "green":#00BABF,
+  "green-c":#00BD8F,
+  "green-a":rgba(65, 186, 191, 0.7),
+  //"light-green":#5BC8CE,
+  "white":#fff,
+  "gray":#f7f7f7,
+  "gray-a":rgba(245, 245, 245, 0.8),
+  "dark-gray":#999999,
+  "yellow":#FFB938,
+  "orange":#FF9B65,
+  "blue":#00A5DE,
+  "purple":#9280E6,
+  "pink":#FF799A,
+  "red":#FF585C,
+  "darkBlue":#5595EA
+) !global;
+$mainColor: map_get($baseColorMap, 'green') !global;
+$fontColorMap: (
+  "base":#333,
+  "lighter":#666,
+  "lightest":#999,
+  "link":#577FA4
+) !global;
+$borderColorMap: (
+  "base":#E8E8E8,
+  "heavyer":#d0d0d0
+) !global;
+$backgroundColorMap: (
+  "base":#dedede,
+  "lighter":#eee
+) !global;
+//基础字号
+$hMap: (
+  "h1":remSize(30),
+  "h2":remSize(24),
+  "h3":remSize(18),
+  "h4":remSize(16),
+  "h5":remSize(14),
+  "h6":remSize(12)
+) !global;
+//基础img
+$imgSizeMap: (
+  "xs":remSize(66),
+  "sm":remSize(80),
+  "md":remSize(100),
+  "lg":remSize(120)
+) !global;
+$sq: (
+  "square":1,
+  "oblong":2,
+  "banner":3.0
+) !global;
+//基础margin
+$marginSizeMap: (
+  "xs":remSize(10),
+  "sm":remSize(20),
+  "md":remSize(30),
+  "lg":remSize(40)
+) !global;
+//基础padding
+$paddingSizeMap: (
+  "xs":remSize(10),
+  "sm":remSize(20),
+  "md":remSize(30),
+  "lg":remSize(40)
+) !global;
+//基础radius
+$radiusSizeMap: (
+  "xs":remSize(2),
+  "sm":remSize(4),
+  "md":remSize(8),
+  "lg":remSize(16),
+  "full":remSize(65535)
+) !global;

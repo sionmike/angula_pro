@@ -1,0 +1,22 @@
+@import "../../../css/forNG2";
+
+/deep/ p {
+  font-size: remSize(16) !important;
+  line-height:remSize(30);
+  color: #666;
+  img {
+    width: 12rem;
+    margin-left: remSize(100);
+  }
+}
+
+/deep/ h2{
+  padding-bottom: remSize(15);
+  padding-top: remSize(15);
+}
+
+/deep/ h3{
+  padding-bottom: remSize(15);
+  padding-top: remSize(15);
+  color: #00BABF;
+}

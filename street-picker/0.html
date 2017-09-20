@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./kartograph/jquery.min.js"></script>
+  <script src="./kartograph/raphael-min.js"></script>
+  <script src="./kartograph/kartograph.js"></script>
+  <script src="./js/m-picker.js"></script>
+  <link href="./css/m-picker.css" rel="stylesheet">
+  <style>
+    #map svg{
+      background-image: url('./img/yaohai_s.png');
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="map" style="position: relative;"></div>
+</div>
+<script>
+  initMap('yaohai','street');
+  var sr = [
+    {name:'新站区七里塘社区',x:362,y:149},
+    {name:'长淮街道社区',x:339,y:322},
+    {name:'方庙街道社区',x:571,y:276},
+    {name:'七里站街道社区',x:731,y:385},
+    {name:'三里街街道社区',x:509,y:441},
+    {name:'胜利路、明光路街道社区',x:346,y:506},
+    {name:'铜陵路街道社区',x:582,y:578},
+    {name:'大兴社区',x:833,y:550},
+    {name:'红光街道社区',x:764,y:653},
+    {name:'城东街道社区',x:669,y:762},
+    {name:'和平路街道社区',x:497,y:695}
+  ];
+  addStreetText(sr);
+</script>
+</body>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./kartograph/jquery.min.js"></script>
+  <script src="./kartograph/raphael-min.js"></script>
+  <script src="./kartograph/kartograph.js"></script>
+  <script src="./js/m-picker.js"></script>
+  <link href="./css/m-picker.css" rel="stylesheet">
+  <style>
+    #map svg{
+      background-image: url('./img/shushan_s.png');
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="map" style="position: relative;"></div>
+</div>
+<script>
+  initMap('shushan','street');
+  var sr = [
+    {name:'井岗镇社区',x:260,y:223},
+    {name:'天乐社区',x:430,y:177},
+    {name:'兴园社区',x:532,y:335},
+    {name:'五里墩街道社区',x:706,y:188},
+    {name:'琥珀街道社区',x:867,y:245},
+    {name:'西园社区',x:740,y:302},
+    {name:'南七街道社区',x:698,y:434},
+    {name:'荷叶地街道社区',x:652,y:600},
+    {name:'稻香村社区',x:871,y:577},
+    {name:'三里庵街道社区',x:857,y:403},
+    {name:'莲花社区',x:728,y:775},
+    {name:'海恒社区',x:952,y:760},
+    {name:'蜀南庭苑社区',x:378,y:325}
+  ];
+  addStreetText(sr,'shushan');
+</script>
+</body>
+

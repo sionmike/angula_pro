@@ -1,0 +1,148 @@
+@import "../../../css/forNG2";
+
+$imgHeight: remSize(60);
+header, li {
+  > div {
+    float: left;
+  }
+  > div:nth-of-type(1) {
+    width: remSize(420);
+  }
+  > div:nth-of-type(2) {
+    width: remSize(160);
+  }
+  > div:nth-of-type(3) {
+    width: remSize(160);
+  }
+  > div:nth-of-type(4) {
+    width: remSize(320);
+  }
+  > div:nth-of-type(5) {
+    width: remSize(160);
+  }
+}
+
+header {
+  div {
+    line-height: remSize(40);
+    text-align: center;
+  }
+  div:first-of-type {
+    text-align: left;
+    box-sizing: border-box;
+  }
+}
+
+li {
+  > div {
+    height: $imgHeight;
+  }
+  > div:nth-of-type(n+2) {
+    line-height: $imgHeight;
+  }
+  > div:nth-of-type(n+5) {
+    line-height: remSize(35);
+  }
+  > div:first-of-type {
+    img {
+      height: $imgHeight;
+      width: remSize(100);
+    }
+    .detail {
+      width: remSize(280);
+      > *:first-child {
+        line-height: 2;
+      }
+    }
+  }
+}
+.padding-height-xxs{
+  padding-top: remSize(6);
+  padding-bottom:remSize(6);
+}
+$animateTime:.25s;
+.layer{
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  z-index: 1000;
+  .order-modal {
+    background-color:#fff;
+    z-index: 100001;
+    position: fixed;
+    width: remSize(480);
+    top: 25%;
+    left: 50%;
+    margin-left: remSize(-240);
+    box-shadow: 0 remSize(2) remSize(2) remSize(1) rgba(0, 0, 0, 0.5);
+    animation: blockShow $animateTime 1;
+    &.hideAnimate {
+      animation: blockHide $animateTime 1;
+    }
+    .modal-header{
+      background-color: rgb(246, 246, 246);
+      .modal-header-title{
+        margin-left: remSize(5);
+      }
+      .modal-header-close{
+        padding-right: remSize(2);
+      }
+    }
+    .modal-footer{}
+    .modal-body{
+      .time{
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        border-radius: remSize(6);
+        width: remSize(160);
+        padding-top: remSize(5);
+        padding-bottom: remSize(5);
+        background: url('../../../assets/img/icon_time.png') no-repeat right;
+        background-size: remSize(15) remSize(15);
+        background-origin: content-box;
+      }
+      .star {
+        width: remSize(20);
+        height: remSize(20);
+        background: url('../../../assets/img/star_01.png') no-repeat;
+        background-size: cover;
+      }
+      .star-active {
+        width: remSize(20);
+        height: remSize(20);
+        background: url('../../../assets/img/star_02.png') no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
+@keyframes blockShow {
+  0% {
+    opacity: 0;
+  }
+  25%{
+    opacity: 0.25;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  75%{
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blockHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,50 @@
+<div class="{{(!showMenu||scrollAfterHeader)?'header-fixed':''}}">
+  <div class="background-color-black user-info">
+    <div class="wapper h5">
+      <span class="text-left font-color-white margin-left-sm">{{user.name}}，你好！当前登录时间：{{nowDate | date:'yyyy/MM/dd'}} {{weeks[nowWeekDay]}}</span>
+      <span class="user-center pointer text-center float-right font-color-white margin-right-sm font-hover-color-green">
+        <span class="inline-block margin-left-xxs">{{user.name}}</span>
+        <div class="inline-block">&#xe632;</div>
+        <ul class="padding-width-sm">
+          <li class="font-color-white font-hover-color-green border-line-bottom border-color-white-a"
+              [routerLink]="['/order-list']">我的订单</li>
+          <li class="font-color-white font-hover-color-green border-line-bottom border-color-white-a" [routerLink]="['/region-picker']">切换社区</li>
+          <li class="font-color-white font-hover-color-green" (click)="logout()">退出登录</li>
+        </ul>
+      </span>
+    </div>
+  </div>
+  <div class="border-color-green nav background-color-white">
+    <div class="wapper">
+      <ul class="h5 float-left">
+        <li class="fi float-left text-center {{showMenu&&!scrollAfterHeader?'show':''}}">
+          <div class="background-color-green font-color-white">全部服务 <span>&#xe632;</span></div>
+          <div class="service-list font-color-white">
+            <ul class="service-main-list float-left background-color-green-a border-color-green">
+              <li class="service-main-item font-hover-color-global-base background-hover-color-gray-a"
+                  *ngFor="let items of serviceList;let i = index;">
+                <div class="padding-width-sm">
+                  <div class="float-left">
+                    {{items.title.toString()}}
+                  </div>
+                  <div class="float-right">&#xe649;</div>
+                  <ul class="service-sub-list float-left background-color-gray-a border-color-green">
+                    <li class="service-sub-item font-hover-color-green pointer" *ngFor="let subItem of items.subItems;let y = index;"(click)="serviceDetailClick(i, subItem)">
+                      {{subItem.title}}
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="fi float-left text-center pointer" (click)="goHomeTarget('h1')">健康评估</li>
+        <li class="fi float-left text-center pointer" (click)="goHomeTarget('h2')">健康资讯</li>
+      </ul>
+      <div class="logo float-right">
+        <img src="assets/img/logo_youhujia.png" class="pointer" [routerLink]="['/home']">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="{{(!showMenu||scrollAfterHeader)?'place-holder':''}}"></div>

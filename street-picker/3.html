@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./kartograph/jquery.min.js"></script>
+  <script src="./kartograph/raphael-min.js"></script>
+  <script src="./kartograph/kartograph.js"></script>
+  <script src="./js/m-picker.js"></script>
+  <link href="./css/m-picker.css" rel="stylesheet">
+  <style>
+    #map svg{
+      background-image: url('./img/baohe_s.png');
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="map" style="position: relative;"></div>
+</div>
+<script>
+  initMap('baohe','street');
+  var sr = [
+    {name:'芜湖路社区',x:220,y:67},
+    {name:'望江中路社区',x:250,y:260},
+    {name:'包公街道社区',x:422,y:206},
+    {name:'望湖街道社区',x:553,y:382},
+    {name:'常青街道社区',x:259,y:458},
+    {name:'骆岗街道社区',x:439,y:631},
+    {name:'淝河镇社区',x:726,y:553},
+    {name:'大圩镇社区',x:933,y:568},
+    {name:'烟墩街道社区',x:485,y:812},
+    {name:'义城街道社区',x:849,y:805}
+  ];
+  addStreetText(sr,'baohe');
+</script>
+</body>
+

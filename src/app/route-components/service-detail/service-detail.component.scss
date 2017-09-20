@@ -1,0 +1,22 @@
+@import "../../../css/forNG2";
+
+.service-main-info {
+  img {
+    height: remSize(190);
+    width: remSize(380);
+  }
+  .block {
+    line-height: remSize(36);
+  }
+}
+
+li {
+  .icon {
+    line-height: remSize(60);
+    width: remSize(30);
+    font-size: remSize(30);
+  }
+  .detail * {
+    line-height: remSize(30);
+  }
+}

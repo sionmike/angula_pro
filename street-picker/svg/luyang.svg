@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'
+  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg enable_background="new 0 0 1200 950" height="950px" pretty_print="False"
+     style="stroke-linejoin: round; stroke:#000; fill: none;" version="1.1" viewBox="0 0 1200 950" width="1200px"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style type="text/css"><![CDATA[path { fill-rule: evenodd; }]]></style>
+  </defs>
+  <metadata>
+    <views>
+      <view h="950" padding="0" w="1200">
+        <proj id="laea-usa" lat0="0" lon0="0"/>
+        <bbox h="0" w="0" x="0" y="0"/>
+      </view>
+    </views>
+  </metadata>
+  <defs>
+  </defs>
+  <g id="layer0">
+    <path
+      d="M1000.000,354.000 L870.000,306.000 L804.000,344.000 L791.000,423.000 L805.000,495.000 L881.000,509.000 L909.000,572.000 L1022.000,550.000 L1000.000,354.000 Z"
+      id="path-1"/>
+    <path
+      d="M688.000,560.000 L665.000,534.000 L470.000,498.000 L529.000,402.000 L734.000,393.000 L792.478,423.863 L807.000,495.000 L688.000,560.000 Z"
+      id="path-2"/>
+    <path
+      d="M1166.000,326.000 L1163.000,579.000 L1091.000,579.000 L1019.000,550.000 L998.000,355.000 L1076.000,318.000 L1166.000,326.000 Z"
+      id="path-3"/>
+    <path
+      d="M908.000,569.000 L1021.000,548.000 L1091.000,577.000 L1163.000,577.000 L1162.000,738.000 L1005.000,771.000 L894.000,680.000 L908.000,569.000 Z"
+      id="path-4" style="stroke: inherit; filter: none; fill: inherit" class="cls-2"/>
+    <path
+      d="M176.000,499.000 L404.000,571.000 L402.000,527.000 L473.000,497.000 L532.000,402.000 L529.000,294.000 L471.000,289.000 L451.000,247.000 L285.000,316.000 L306.000,390.000 L176.000,499.000 Z"
+      id="path-5" style="stroke: inherit; filter: none; fill: inherit" class="cls-2"/>
+    <path
+      d="M677.000,227.000 L527.000,294.000 L530.000,404.000 L734.000,395.000 L792.000,426.000 L806.000,345.000 L871.000,308.000 L868.000,189.000 L677.000,227.000 Z"
+      id="path-6" style="stroke: inherit; filter: none; fill: inherit" class="cls-3"/>
+    <path
+      d="M653.000,696.000 L688.000,557.000 L806.000,493.000 L882.000,507.000 L910.000,569.000 L896.000,681.000 L839.000,633.000 L653.000,696.000 Z"
+      id="path-7"/>
+    <path
+      d="M689.668,559.003 L666.203,532.625 L471.000,496.000 L400.000,526.000 L402.000,570.000 L521.000,724.000 L565.000,727.000 L655.000,696.000 L689.668,559.003 Z"
+      id="path-8" style="stroke: inherit; filter: none; fill: inherit" class="cls-2"/>
+    <path
+      d="M452.000,249.000 L419.000,187.000 L171.000,191.000 L31.000,416.000 L35.000,457.000 L177.000,500.000 L308.000,391.000 L288.000,317.000 L452.000,249.000 Z"
+      id="path-9" style="stroke: inherit; filter: none; fill: inherit" class="cls-2"/>
+    <path
+      d="M866.000,189.000 L869.000,307.000 L1000.000,356.000 L1077.000,320.000 L1166.000,328.000 L1168.000,187.000 L866.000,189.000 Z"
+      id="path-10" style="stroke: inherit; filter: none; fill: inherit" class="cls-2"/>
+  </g>
+</svg>

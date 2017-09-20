@@ -1,0 +1,18 @@
+@import "../../../css/forNG2";
+
+.footer-tips {
+  .align-inline-3 {
+    .radius-full {
+      width: remSize(80);
+      height: remSize(80);
+      //margin: remSize(30) auto;
+      line-height: remSize(80);
+      font-size: remSize(35);
+      box-sizing: border-box;
+    }
+  }
+}
+
+footer {
+  line-height: 1.5;
+}

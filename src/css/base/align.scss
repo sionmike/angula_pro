@@ -1,0 +1,56 @@
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.align-inline-1 {
+  width: 100%;
+}
+
+.align-inline-2 {
+  width: 50%;
+}
+
+.align-inline-3 {
+  width: 33.33%;
+}
+
+.align-inline-4 {
+  width: 25%;
+}
+
+.align-inline-5 {
+  width: 20%;
+}
+
+.align-inline-1, .align-inline-2, .align-inline-3, .align-inline-4, .align-inline-5 {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}

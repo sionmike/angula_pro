@@ -1,0 +1,24 @@
+@import "../../../css/forNG2";
+
+.icon {
+  line-height: 1;
+  font-size: remSize(60);
+}
+
+.tool-item {
+  position: relative;
+  .items {
+    display: none;
+
+  }
+}
+
+.tool-item:hover .items {
+  display: block;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

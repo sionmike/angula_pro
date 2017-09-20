@@ -1,0 +1,41 @@
+<div class="wapper margin-top-md padding-md background-color-white">
+  <h2 class="title padding-left-sm"> 个人信息</h2>
+  <div class="clear-float border-line-bottom border-color-gray h0 padding-height-md">
+    <span class="h4 font-color-global-lighter">
+      姓名：{{orderDetail.patient.name}}
+    </span>
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      性别：{{orderDetail.patient.sex}}
+    </span>
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      年龄：{{orderDetail.patient.age}}
+    </span>
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      手机号：{{orderDetail.patient.phone}}
+    </span>
+  </div>
+</div>
+<div class="wapper margin-bottom-md padding-width-md background-color-white">
+  <h2 class="title padding-left-sm">服务护士</h2>
+  <div class="clear-float h0 padding-height-md">
+    <span class="h4 font-color-global-lighter">
+      姓名：{{orderDetail.nurse.name}}
+    </span>
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      科室：{{orderDetail.nurse.hospital}}
+    </span>
+    <span class="h4 font-color-global-lighter margin-left-sm">
+      职称：{{orderDetail.nurse.title}}
+    </span>
+  </div>
+  <div class="clear-float h0 padding-bottom-md">
+    <span class="h4 font-color-global-lighter float-left">
+      星级:
+    </span>
+    <span class="{{num > 0 ? 'star-active':'star'}} float-left margin-right-xs margin-left-xs"></span>
+    <span class="{{num > 1 ? 'star-active':'star'}} float-left margin-right-xs"></span>
+    <span class="{{num > 2 ? 'star-active':'star'}} float-left margin-right-xs"></span>
+    <span class="{{num > 3 ? 'star-active':'star'}} float-left margin-right-xs"></span>
+    <span class="{{num > 4 ? 'star-active':'star'}} float-left"></span>
+  </div>
+</div>

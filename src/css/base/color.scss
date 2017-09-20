@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+@each $name, $c in $baseColorMap {
+  .font-color-#{$name} {
+    color: $c !important;
+  }
+  .font-hover-color-#{$name} {
+    transition: all 0.2s;
+    &:hover {
+      color: $c !important;
+    }
+  }
+  .border-color-#{$name} {
+    border-color: $c !important;
+  }
+  .background-color-#{$name} {
+    background-color: $c !important;
+  }
+  .background-hover-color-#{$name} {
+    transition: all 0.2s;
+    &:hover {
+      background-color: $c !important;
+    }
+  }
+}
+
+@each $name, $c in $fontColorMap {
+  .font-color-global-#{$name} {
+    color: $c !important;
+  }
+  .font-hover-color-global-#{$name} {
+    transition: all 0.2s;
+    &:hover {
+      color: $c !important;
+    }
+  }
+}
+
+@each $name, $c in $borderColorMap {
+  .border-color-global-#{$name} {
+    border-color: $c !important;
+  }
+}
+
+@each $name, $c in $backgroundColorMap {
+  .background-color-global-#{$name} {
+    background-color: $c !important;
+  }
+}
+
+.border-line-top {
+  border-top: 1px solid;
+}
+
+.border-line-left {
+  border-left: 1px solid;
+}
+
+.border-line-right {
+  border-right: 1px solid;
+}
+
+.border-line-bottom {
+  border-bottom: 1px solid;
+}
+
+.border-line {
+  border: 1px solid;
+}

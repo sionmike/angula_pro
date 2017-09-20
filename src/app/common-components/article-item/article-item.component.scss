@@ -1,0 +1,23 @@
+@import "../../../css/forNG2";
+
+$itemWidth: remSize(585);
+$imgWidth: remSize(365);
+$imgHeight: remSize(150);
+.article-item {
+  width: $itemWidth;
+  .detail {
+    width: 2.5rem;
+  }
+  img {
+    width: $imgWidth;
+    height: $imgHeight;
+  }
+}
+.h3{
+  padding: 0;
+}
+
+li {
+  list-style: disc;
+}
+

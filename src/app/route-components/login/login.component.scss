@@ -1,0 +1,122 @@
+@import "../../../css/forNG2";
+
+.login-header{
+  position: fixed;
+  top: 0;
+  left:0;
+  height:remSize(90);
+  img{
+    height:remSize(50);
+    margin-top: remSize(-35);
+  }
+  width: 100%;
+}
+.login-footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  height:remSize(90);
+  p{
+    line-height:remSize(20);
+  }
+  img{
+    margin-top: remSize(20);
+  }
+  width: 100%;
+}
+.layer {
+  background: url("../../../assets/img/bg_2.png") repeat;
+  background-size: 1px 100%;
+  overflow: scroll;
+  position: fixed;
+  top:remSize(90);
+  left:0;
+  right:0;
+  bottom:remSize(90);
+  .login-layer{
+    margin-top: remSize(40);
+    margin-bottom: remSize(40);
+    margin-left: remSize(204);
+    position: relative;
+    width: remSize(422);
+    height:remSize(366);
+    box-shadow: remSize(1) remSize(1) remSize(1) remSize(1) rgba(65, 186, 191, 0.5);
+    .login-title{
+      margin-top: remSize(40);
+      height:remSize(50);
+    }
+    .user-phone{
+      margin-top: remSize(20);
+      width: remSize(422);
+      height:remSize(50);
+      input{
+        width: remSize(300);
+        height:remSize(40);
+      }
+    }
+    .user-code{
+      margin-top: remSize(20);
+      width:remSize(422);
+      height:remSize(40);
+      input{
+        width: remSize(300);
+        height:remSize(40);
+      }
+      span{
+        position: absolute;
+        right:remSize(80);
+        top: remSize(187);
+      }
+    }
+    .user-submit{
+      margin-top: remSize(40);
+      width:remSize(422);
+      height:remSize(40);
+      .user-login{
+        width:remSize(300);
+        //box-shadow: 0 remSize(7) remSize(6) 0 rgba(65, 186, 191, 0.5);
+      }
+      .padding-height-xxs{
+        padding-top: remSize(5);
+        padding-bottom: remSize(5);
+      }
+    }
+  }
+  .layer-right{
+    width: remSize(370);
+    height:remSize(284);
+    margin-top: remSize(81);
+    .p-circle{
+      width:remSize(12);
+      height:remSize(12);
+      border-radius:remSize(12);
+      border:2px solid #fff;
+    }
+    .layer-right-top{
+      margin-top: remSize(80);
+      width: remSize(370);
+      position: relative;
+      img{
+        //left:remSize(10);
+        top: remSize(-5);
+        position: relative;
+        width: remSize(12);
+        height:remSize(12);
+      }
+    }
+    .layer-right-bottom{
+      margin-top: remSize(30);
+      width: remSize(370);
+      position: relative;
+      img{
+        top: remSize(-5);
+        position: relative;
+        width: remSize(12);
+        height:remSize(12);
+      }
+      p{
+        line-height:remSize(30);
+      }
+    }
+  }
+}

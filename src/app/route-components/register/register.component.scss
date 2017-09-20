@@ -1,0 +1,108 @@
+@import "../../../css/forNG2";
+
+.login-header {
+  height: remSize(90);
+  position: fixed;
+  top: 0;
+  left:0;
+  img {
+    height: remSize(50);
+    margin-top: remSize(-35);
+  }
+  width: 100%;
+}
+
+.login-footer {
+  height: remSize(90);
+  position: fixed;
+  bottom:0;
+  left:0;
+  p {
+    line-height: remSize(20);
+  }
+  img {
+    margin-top: remSize(20);
+  }
+  width: 100%;
+}
+
+.layer {
+  position: fixed;
+  top:remSize(90);
+  left:0;
+  right:0;
+  bottom:remSize(90);
+  background: url("../../../assets/img/bg_2.png") repeat-x;
+  overflow: scroll;
+  background-size: 100% 100%;
+  //height:remSize(708);
+  width: 100%;
+  //margin-top: remSize(90);
+  .login-layer {
+    margin-top: remSize(40);
+    margin-bottom: remSize(40);
+    margin-left: remSize(389);
+    position: relative;
+    width: remSize(422);
+    height: remSize(628);
+    box-shadow: remSize(1) remSize(1) remSize(1) remSize(1) rgba(65, 186, 191, 0.5);
+    .register-title{
+      width: remSize(422);
+      margin-top: remSize(20);
+      text-align: center;
+    }
+    .register-forms {
+      width: remSize(422);
+    }
+    .margin-left-llg {
+      margin-left: remSize(64);
+    }
+    margin-top-xxs {
+      margin-top: remSize(5);
+    }
+    .time {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      border-radius: remSize(6);
+      width: remSize(146);
+      overflow: hidden;
+      background: url('../../../assets/img/icon_time.png') no-repeat right;
+      background-size: remSize(15) remSize(15);
+      background-origin: content-box;
+      height:remSize(45);
+    }
+    .register-address {
+      position: relative;
+      .register-address-province {
+        position: relative;
+        top: remSize(2);
+      }
+    }
+    .register-sex {
+      position: relative;
+      label {
+        position: relative;
+        top: remSize(6);
+      }
+    }
+    .input-width {
+      width: remSize(300);
+    }
+    .input-height {
+      height: remSize(45);
+    }
+    .user-submit {
+      margin-top: remSize(20);
+      width: remSize(422);
+      height: remSize(45);
+      .user-login {
+        width: remSize(300);
+      }
+      .padding-height-xxs {
+        padding-top: remSize(6);
+        padding-bottom: remSize(6);
+      }
+    }
+  }
+}

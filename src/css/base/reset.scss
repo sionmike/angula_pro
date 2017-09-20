@@ -1,0 +1,110 @@
+//html {
+//width: 100% !important;
+//min-height: 100% !important;
+//overflow-x: auto;
+//}
+
+//body {
+//width: 100% !important;
+//min-height: 100% !important;
+//overflow-x: auto;
+//@extend .font-color-global-base, .background-color-global-lighter;
+//}
+body, html {
+  width: 100%;
+  min-width: 16rem;
+  overflow-x: scroll;
+  background-color: #f7f7f7;
+}
+
+//body > * {
+//  margin: 0 auto;
+//}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 118944 */
+  src: url('//at.alicdn.com/t/font_ayp6xg1o6ss2lnmi.eot');
+  src: url('//at.alicdn.com/t/font_ayp6xg1o6ss2lnmi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_ayp6xg1o6ss2lnmi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_ayp6xg1o6ss2lnmi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_ayp6xg1o6ss2lnmi.svg#iconfont') format('svg');
+}
+
+@font-face {
+  font-family: 'projectIcon';  /* project id 93187 */
+  src: url('//at.alicdn.com/t/font_5ihecf7ip4hiwwmi.eot');
+  src: url('//at.alicdn.com/t/font_5ihecf7ip4hiwwmi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_5ihecf7ip4hiwwmi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_5ihecf7ip4hiwwmi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_5ihecf7ip4hiwwmi.svg#iconfont') format('svg');
+}
+
+.projectIcon{
+  font-family: projectIcon !important;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "microsoft yahei", simhei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif, iconfont !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, a:hover, a:link, a:visited {
+  text-decoration: none;
+  color: map_get($fontColorMap, link);
+  //font-size: map_get($hMap, h5);
+}
+
+//*[ng-reflect-router-link] {
+//  cursor: pointer;
+//}
+//a:hover {
+//  opacity: 0.8;
+//}
+
+ul, ol, li {
+  list-style: none;
+}
+
+iframe {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: map_get($fontColorMap, 'base');
+}
+
+p {
+  word-break: break-all;
+  text-align: justify;
+}
+
+//input[type='text'], input[type='password'], input[type='datetime-local'], input[type='tel'] {
+input {
+  outline: none;
+  //border: 0;
+  padding: 0.25em 0.5em !important;
+  //border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  -webkit-appearance: textfield;
+  margin: 0;
+  //&:after {
+  //  display: none;
+  //}
+}
+
+input::-webkit-input-placeholder, input::-moz-placeholder {
+  font-size: 1em;
+  //padding:0.25em 0.5em;
+}

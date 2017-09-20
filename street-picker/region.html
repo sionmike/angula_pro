@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./kartograph/jquery.min.js"></script>
+  <script src="./kartograph/raphael-min.js"></script>
+  <script src="./kartograph/kartograph.js"></script>
+  <script src="./js/m-picker.js"></script>
+  <link href="./css/m-picker.css" rel="stylesheet">
+  <style>
+    #map svg {
+      background-image: url('./img/hefei_s.png');
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="map" style="position: relative;"></div>
+  <img src="./img/hefei_l.png">
+  <div class="region" style="left: 2.3rem;top: 2.2rem;">
+    <p>庐</p>
+  </div>
+  <div class="region" style="left: 4rem;top: 2.5rem;">
+    <p>阳</p>
+  </div>
+  <div class="region" style="left: 5.7rem;top: 2.8rem;">
+    <p>区</p>
+  </div>
+  <div class="region" style="left: 8.5rem;top: 2.4rem;">
+    <p>瑶</p>
+  </div>
+  <div class="region" style="left: 9.5rem;top: 3.6rem;">
+    <p>海</p>
+  </div>
+  <div class="region" style="left: 10.3rem;top: 4.8rem;">
+    <p>区</p>
+  </div>
+  <div class="region" style="left: 2rem;top: 4.8rem;">
+    <p>蜀</p>
+  </div>
+  <div class="region" style="left: 4.5rem;top: 6rem;">
+    <p>山</p>
+  </div>
+  <div class="region" style="left: 5.6rem;top: 8.5rem;">
+    <p>区</p>
+  </div>
+  <div class="region" style="left: 8rem;top: 6.2rem;">
+    <p>包</p>
+  </div>
+  <div class="region" style="left: 9.3rem;top: 7.7rem;">
+    <p>河</p>
+  </div>
+  <div class="region" style="left: 10.6rem;top: 9.2rem;">
+    <p>区</p>
+  </div>
+</div>
+<script>
+  initMap('hefei','region');
+</script>
+</body>
+

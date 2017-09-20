@@ -1,0 +1,139 @@
+@import "../../../css/forNG2";
+
+.place-holder {
+  height: remSize(90);
+}
+
+.header-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 20000;
+}
+
+.user-info .wapper {
+  line-height: remSize(40);
+}
+
+.user-center {
+  position: relative;
+  width:remSize(100);
+  height:remSize(40);
+  .triangle-up {
+    position: relative;
+    display: block;
+    width: 0;
+    top: remSize(-14);
+    margin-left: remSize(8);
+    border-left: remSize(6) solid transparent;
+    border-right: remSize(6) solid transparent;
+    border-bottom: remSize(8) solid #fff;
+  }
+  .triangle-down {
+    position: relative;
+    display: none;
+    width: 0;
+    height: 0;
+    top: remSize(18);
+    margin-left: remSize(8);
+    border-left: remSize(6) solid transparent;
+    border-right: remSize(6) solid transparent;
+    border-top: remSize(8) solid #fff;
+  }
+  ul {
+    position: relative;
+    z-index: 100000;
+    right:0;
+    background-color: rgba(38, 39, 43, 0.85);
+    height: 0;
+    width: remSize(100);
+    overflow: hidden;
+    transition: height 0.2s;
+    .border-color-white-a {
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+    li{
+      text-align: center;
+    }
+    li:hover {
+      cursor: pointer;
+      color: rgba(65, 186, 191, 0.7);
+    }
+  }
+  &:hover{
+    ul {
+      height:remSize(120);
+      li{
+        height:remSize(40);
+      }
+    }
+  }
+}
+//.user-center:hover {
+//}
+
+$navBorder: 2px;
+$serviceItemHeight: remSize(50);
+$serviceItemWidth: remSize(180);
+.nav {
+  height: $serviceItemHeight;
+  border-bottom: $navBorder solid;
+  z-index: 20000;
+  position: relative;
+  .logo {
+    height: $serviceItemHeight;
+    position: relative;
+    img {
+      height: remSize(35);
+      position: absolute;
+      right: remSize(-100);
+      top: remSize(7);
+    }
+  }
+  .fi {
+    &:hover, &.show {
+      & .service-main-list {
+        height: $serviceItemHeight*7 !important;
+      }
+    }
+    line-height: $serviceItemHeight;
+    height: $serviceItemHeight;
+    width: remSize(100);
+    &:first-of-type {
+      width: $serviceItemWidth;
+    }
+  }
+  .service-list {
+    position: relative;
+    .service-main-list {
+      border-top: $navBorder solid;
+      margin-top: -1 * $navBorder;
+      width: $serviceItemWidth;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.2s;
+      .service-main-item {
+        height: $serviceItemHeight;
+        line-height: $serviceItemHeight;
+        &:hover {
+          & .service-sub-list {
+            width: $serviceItemWidth;
+            transition: width 0.5s;
+          }
+        }
+        .service-sub-list {
+          margin-top: -1 * $navBorder;
+          border-top: $navBorder solid;
+          position: absolute;
+          top: 0;
+          width: 0;
+          overflow: hidden;
+          left: $serviceItemWidth;
+          height: $serviceItemHeight*7;
+          color: map_get($fontColorMap, 'base');
+        }
+      }
+    }
+  }
+}

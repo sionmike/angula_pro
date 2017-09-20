@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+@each $name, $size in $marginSizeMap {
+  .margin-#{$name} {
+    margin: $size;
+  }
+  .margin-top-#{$name} {
+    margin-top: $size;
+  }
+  .margin-bottom-#{$name} {
+    margin-bottom: $size;
+  }
+  .margin-left-#{$name} {
+    margin-left: $size;
+  }
+  .margin-right-#{$name} {
+    margin-right: $size;
+  }
+  .margin-width-#{$name} {
+    margin-right: $size;
+    margin-left: $size;
+  }
+  .margin-height-#{$name} {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+  .margin-re-width-#{$name} {
+    margin-right: $size*-1;
+    margin-left: $size*-1;
+  }
+  .margin-re-height-#{$name} {
+    margin-top: $size*-1;
+    margin-bottom: $size*-1;
+  }
+  .margin-re-bottom-#{$name} {
+    margin-bottom: $size*-1;
+  }
+  .margin-re-left-#{$name} {
+    margin-left: $size*-1;
+  }
+  .margin-re-right-#{$name} {
+    margin-right: $size*-1;
+  }
+  .margin-re-top-#{$name} {
+    margin-top: $size*-1;
+  }
+}
+
+.margin-width-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-0 {
+  margin: 0 !important;
+}

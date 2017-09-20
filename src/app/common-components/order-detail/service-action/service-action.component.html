@@ -1,0 +1,40 @@
+<div class="wapper margin-height-md padding-md background-color-white">
+  <h2 class="title padding-left-sm">服务步骤</h2>
+  <ul>
+    <li class="clear-float margin-top-sm {{i!=0?'border-line-top border-color-global-base padding-top-sm':''}}"
+    *ngFor="let action of orderDetail.item.action;let i=index;">
+      <div class="icon font-color-green-c float-left margin-right-sm margin-top-xs" [ngSwitch]="i">
+        <span *ngSwitchCase="0">&#xe69e;</span>
+        <span *ngSwitchCase="1">&#xe6a6;</span>
+        <span *ngSwitchCase="2" >&#xe6a7;</span>
+        <span *ngSwitchCase="3">&#xe69f;</span>
+        <span *ngSwitchCase="4">&#xe6a0;</span>
+        <span *ngSwitchCase="5">&#xe6a1;</span>
+        <span *ngSwitchCase="6">&#xe6a2;</span>
+        <span *ngSwitchCase="7">&#xe6a3;</span>
+        <span *ngSwitchCase="8">&#xe6a4;</span>
+        <span *ngSwitchDefault="">&#xe6a4;</span>
+      </div>
+      <div class="detail float-left h0">
+        <div class="action-title clear-float">
+          <span class="h3 float-left font-color-global-base">{{action.title}}</span>
+          <span class="h4 float-right font-color-global-base" *ngIf="action.actionType != 8">&#xe649;</span>
+          <span class="h4 float-right margin-right-xs" *ngIf="action.actionType == 5 || action.actionType == 6">{{'(' + action.progress.Msg + ')'}}</span>
+          <span class="h4 float-right margin-right-xs {{action.progress.Msg == '未完成'?'font-color-red':'font-color-green-c'}}" *ngIf="action.actionType == 7 || action.actionType == 8">{{action.progress.Msg}}</span>
+        </div>
+        <p class="h5 action-title font-color-global-lighter">{{action.desc}}</p>
+        <ul *ngIf="action.content">
+          <li *ngFor="let content of action.content;let y = index;" (click)="onContentClick(action, content)">
+            <div class="action-title clear-float background-hover-color-gray pointer">
+              <span class="h5 float-left font-color-global-lighter padding-left-sm">{{'（'+ (y + 1) + '）' + content.status.title}}</span>
+              <span class="h5 font-color-global-lighter float-right">&#xe649;</span>
+              <span class="h5 float-right {{content.status.progress.buttonMsg == '未读'?'font-color-red':'font-color-green-c'}} margin-right-xs" *ngIf="action.actionType == 5">{{content.status.progress.buttonMsg}}</span>
+              <span class="h5 float-right {{content.status.progress.buttonMsg == '未自测'?'font-color-red':'font-color-green-c'}} margin-right-xs" *ngIf="action.actionType == 6">{{content.status.progress.buttonMsg}}</span>
+              <span class="h5 float-right {{content.status.progress.buttonMsg == '未评估'?'font-color-red':'font-color-green-c'}} margin-right-xs" *ngIf="action.actionType == 7">{{content.status.progress.buttonMsg}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

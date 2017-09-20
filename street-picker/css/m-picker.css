@@ -1,0 +1,85 @@
+body {
+  text-align: center;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 16rem;
+  height: 12.6rem;
+  font-size: 0;
+  margin: 0 auto;
+  position: relative;
+}
+.container img{
+  width: 16rem;
+  height: 12.6rem;
+  padding:0;
+  margin: 0;
+  left:0;
+  right:0;
+  top:0;
+  bottom: 0;
+  position: absolute;
+  pointer-events:none;
+  z-index: 100;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+.mapnail{
+  position: relative;
+}
+svg{
+  width:16rem;
+  height:12.6rem;
+}
+#map {
+  width: 16rem;
+  height: 12.6rem;
+}
+/*path:hover {*/
+  /*transition: all 0.5s;*/
+  /*position: absolute;*/
+  /*transform: scale(2);*/
+  /*z-index: 100 !important;*/
+  /*box-shadow: 10px 10px 5px #888888;*/
+  /*-moz-box-shadow: 10px 10px 5px #888888;*/
+/*}*/
+#map svg {
+  background-size: 100% 100%;
+}
+
+.container .street,.container .region{
+  position: absolute;
+  text-align: center;
+  width: 3rem;
+  z-index: 100;
+  pointer-events:none;
+}
+.container .region p {
+  font-size: 0.72rem !important;
+  margin: 0;
+  color: #fff;
+}
+
+.container .street:before {
+  content: ' ';
+  border-radius: 0.2rem;
+  display: block;
+  margin: 0 auto;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-image: url('../img/point.png');
+  background-size: 100% 100%;
+}
+
+.container .street p {
+  font-size: 0.17rem !important;
+  margin: 0;
+  color: #fff;
+}

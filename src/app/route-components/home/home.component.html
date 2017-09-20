@@ -1,0 +1,119 @@
+<div class="h0">
+  <div class="wapper h0 clear-float">
+    <img class="home-banner float-right" src="assets/img/banner.jpg">
+  </div>
+</div>
+<div class="top-tags background-color-white padding-height-md" *ngIf="datas.length > 0">
+  <ul class="wapper clear-float" *ngIf="street == 'luyang5'">
+    <h2 class="clear-float">
+      <img class="margin-right-xs" src="../../../assets/img/icon_position.png" height="27" width="21"/>
+      {{CommunityData.name}}
+      <div class="community-change inline-block float-right font-color-global-lighter pointer" [routerLink]="['/region-picker']">
+        <div class="inline-block h4">&#xe670;</div>
+        <span class="h3 margin-top-xs font-hover-color-green">切换社区</span>
+      </div>
+    </h2>
+    <div class="community-desc clear-float margin-top-xs">
+      <div class="float-left community-detail">
+        <p class="top-tags-des h4 font-color-global-lighter">{{CommunityData.desc}}</p>
+        <h4 class="font-color-global-lighter margin-top-xs">联系电话：0551-62315373</h4>
+        <h4 class="font-color-global-lighter community-address">社区地址：合肥市庐阳区阜阳北路阳光帝景优阁3楼</h4>
+      </div>
+      <div class="community float-left">
+        <img class="community-banner" src="../../../assets/img/pic.png"/>
+      </div>
+    </div>
+    <h2 class="title margin-height-sm">家庭医生有偿签约</h2>
+    <li class="text-center h0 float-left background-color-gray pointer"
+        *ngFor="let community of CommunityData.items" [routerLink]="['/service-detail', community.id]">
+      <img src="{{community.img}}">
+      <div class="detail background-color-white padding-width-sm padding-height-xs">
+        <div class="clear-float">
+          <h4 class="float-left">{{community.title}}</h4>
+          <h4 class="float-right font-color-yellow"><span>{{(community.price/100).toFixed(2)}}</span>元</h4>
+        </div>
+        <p class="overflow-line-1 h5 font-color-global-lighter">{{community.subtitle}}</p>
+      </div>
+    </li>
+  </ul>
+  <ul class="wapper clear-float" *ngIf="street != 'luyang5'">
+    <h2><img class="margin-width-sm" src="../../../assets/img/icon_position.png" height="27" width="21"/>{{CommunityData.name}}
+    </h2>
+    <p class="top-tags-des h4 font-color-global-lighter margin-sm">{{CommunityData.desc}}</p>
+    <li class="text-center h0 float-left background-color-gray pointer"
+        *ngFor="let community of CommunityData.items">
+      <img src="{{community.img}}">
+      <div class="detail background-color-white padding-width-sm padding-height-xs">
+        <div class="clear-float">
+          <h4 class="float-left">{{community.title}}</h4>
+          <h4 class="float-right font-color-yellow"><span>{{(community.price/100).toFixed(2)}}</span>元</h4>
+        </div>
+        <p class="overflow-line-1 h5 font-color-global-lighter">{{community.subtitle}}</p>
+      </div>
+      <div class="items background-color-black-layer padding-height-xs radius-sm">
+        <h1 class="font-color-white">即将上线</h1>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="top-services padding-top-md" *ngIf="serviceList.length > 0">
+  <ul class="wapper clear-float">
+    <h2 class="title">专项护理</h2>
+    <li class="text-center h0 margin-top-sm float-left background-color-gray pointer"
+        *ngFor="let serviceItem of serviceList" [routerLink]="['/service-detail', serviceItem.id]">
+      <img src="{{serviceItem.img}}">
+      <div class="background-color-white padding-width-sm padding-height-xs">
+        <div class="clear-float">
+          <h4 class="float-left overflow-line-1 h3-width">{{serviceItem.title}}</h4>
+          <h4 class="float-right font-color-yellow"><span>{{(serviceItem.price/100).toFixed(2)}}</span>元</h4>
+        </div>
+        <p class="overflow-line-1 h5 font-color-global-lighter">{{serviceItem.detail}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="wapper">
+  <div class="swiper-container home-service-list margin-height-md home-service-swiper"
+       *ngFor="let serviceList of serviceArray">
+    <div>
+      <h2 class="title margin-bottom-sm padding-left-sm">
+        {{serviceList.title}}
+      </h2>
+      <div class="swiper-pagination home-service-list-pagination h0"></div>
+    </div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide pointer" *ngFor="let serviceItem of serviceList.items">
+        <yh-service-item [serviceItem]="serviceItem" [type]="'local'"></yh-service-item>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wapper">
+  <div class="swiper-container home-tool-list margin-height-md">
+    <div>
+      <h2 class="title margin-bottom-sm padding-left-sm" id="h1">
+        健康评估
+      </h2>
+      <div class="swiper-pagination home-tool-list-pagination h0"></div>
+    </div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let toolList of toolArray">
+        <yh-tool-item [toolList]="toolList"></yh-tool-item>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wapper margin-height-md">
+  <div>
+    <h2 class="title margin-bottom-sm padding-left-sm" id="h2">
+      健康资讯
+      <!--<a class="float-right h5 font-color-global-lighter font-hover-color-green padding-right-sm padding-top-xs pointer"-->
+      <!--[routerLink]="['/article-list']">查看更多</a>-->
+    </h2>
+  </div>
+  <div class="clear-float margin-re-bottom-sm">
+    <div *ngFor="let articleList of articleArray;let i = index" class="float-left {{i % 2 ==1 ? 'margin-left-md':''}}">
+      <yh-article-item [articleList]="articleList"></yh-article-item>
+    </div>
+  </div>
+</div>

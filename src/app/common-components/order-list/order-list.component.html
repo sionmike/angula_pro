@@ -1,0 +1,137 @@
+<header class="clear-float h4 background-color-gray padding-width-sm">
+  <div>订单信息</div>
+  <div>订单状态</div>
+  <div>支付金额</div>
+  <div>操作</div>
+  <div></div>
+</header>
+<ul class="{{orderList.length>0?'margin-re-bottom-sm':''}}">
+  <li class="clear-float padding-sm border-line border-color-global-base h4 text-center margin-height-sm"
+      *ngFor="let orderItem of orderList">
+    <div class="clear-float h0">
+      <img src="{{orderItem.item.pic}}" class="float-left margin-right-sm">
+      <div class="detail float-left text-left">
+        <h4 class="overflow-line-1">{{orderItem.item.title}}</h4>
+        <h5 class="font-color-global-lighter overflow-line-1">{{orderItem.item.desc}}</h5>
+      </div>
+    </div>
+    <div>{{orderItem.status}}</div>
+    <div class="font-color-yellow">{{(orderItem.item.price/100).toFixed(2)}}元</div>
+    <div class="pointer font-hover-underline font-color-global-lighter" *ngIf="type=='list'"
+         [routerLink]="['/order-detail', orderItem.orderId]">查看订单详情
+    </div>
+    <div class="clear-float text-center" *ngIf="type=='detail'">
+      <div
+        class="h4 inline-block pointer font-color-white background-color-yellow padding-height-xxs padding-width-sm radius-sm margin-top-xs "
+        *ngIf="orderItem.status == '待支付'" (click)="onPayOrderClick()">支付
+      </div>
+      <div
+        class="h4 inline-block pointer font-color-global-lighter border-line border-color-gray padding-height-xxs padding-width-sm radius-sm margin-top-xs background-hover-color-green font-hover-color-white"
+        *ngIf="orderItem.status == '服务中'" (click)="onOrderRefundClick()">退款
+      </div>
+      <div
+        class="h4 inline-block pointer font-color-global-lighter border-line border-color-gray padding-height-xxs padding-width-sm radius-sm margin-top-xs background-hover-color-green font-hover-color-white"
+        *ngIf="orderItem.status == '退款申请中'" (click)="onCancelRefundClick()">取消退款
+      </div>
+      <div
+        class="h4 inline-block pointer font-color-white background-color-yellow padding-width-sm padding-height-xxs radius-sm margin-top-xs background-hover-color-green font-hover-color-white"
+        *ngIf="orderItem.status == '待评价'" (click)="onOrderEvaCLick()">评价
+      </div>
+      <div
+        class="h4 inline-block pointer padding-width-sm padding-height-xxs radius-sm margin-top-xs border-line border-color-gray font-color-global-lighter background-color-white background-hover-color-green font-hover-color-white"
+        *ngIf="orderItem.status == '待接单' || orderItem.status == '待支付'" (click)="onCancelOrderClick()">取消订单
+      </div>
+      <div
+        class="h4 inline-block pointer font-color-global-lighter border-line border-color-gray padding-width-sm padding-height-xxs radius-sm margin-top-xs background-color-white background-hover-color-green font-hover-color-white"
+        *ngIf="orderItem.status == '已完成'" (click)="onComplainClick()">申诉
+      </div>
+      <div
+        class="h4 inline-block pointer font-color-white padding-width-sm padding-height-xxs radius-sm margin-top-xs background-color-yellow"
+        *ngIf="orderItem.status == '已关闭' || orderItem.status == '已取消'"
+        [routerLink]="['/service-detail', orderItem.item.itemId]">重新下单
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div class="layer" *ngIf="payModal">
+  <div class="order-modal border-line border-color-gray radius-sm h0 clear-float background-color-white">
+    <h4 class="padding-height-xs modal-header clear-float">
+      <span class="h4 font-color-global-base float-left modal-header-title">微信支付</span>
+      <span class="h4 float-right modal-header-close pointer" (click)="payModal = false;">&#xe65a;</span>
+    </h4>
+    <div class="modal-body padding-width-md padding-height-sm">
+      <div id="qrcode" class="text-center margin-top-xs" style="margin-left: 1.4rem"></div>
+    </div>
+    <div class="modal-footer padding-height-sm">
+      <a
+        class="radius-sm font-color-global-lightest padding-height-xxs padding-width-sm h4 float-right pointer"
+        style="background-color: #e2e2e2;" (click)="cancelPayment()">
+        取消
+      </a>
+      <a
+        class="radius-sm background-color-green font-color-white padding-height-xxs padding-width-sm h4 float-right pointer margin-right-sm"
+        (click)="onFinishPaymenntclick()">
+        我已支付
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="layer" *ngIf="showModal">
+  <div class="order-modal background-color-white border-line border-color-gray radius-sm h0 clear-float">
+    <h4 class="padding-height-xs modal-header clear-float">
+      <span class="h4 font-color-global-base float-left modal-header-title" *ngIf="modalType == 'refund'">申请退款</span>
+      <span class="h4 font-color-global-base float-left modal-header-title" *ngIf="modalType == 'eva'">订单评价</span>
+      <span class="h4 float-right modal-header-close pointer" (click)="showModal = false;modalType='';">&#xe65a;</span>
+    </h4>
+    <div class="modal-body padding-width-md padding-height-sm">
+      <div *ngIf="modalType == 'refund'">
+        <h4 class="margin-height-sm font-color-global-lighter ">退款原因：
+          <select
+            class="time background-color-white font-color-global-lighter border-line border-color-gray padding-width-xs"
+            [(ngModel)]="refundData.reason" required>
+            <option *ngFor="let reason of reasons" [value]="reason.id">{{reason.title}}</option>
+          </select>
+        </h4>
+        <h4 class="margin-height-sm font-color-global-lighter">退款金额(最多{{maxPrice/100}})：
+          <input id="price" style="width:10em;" type="number"
+                 [(ngModel)]="refundData.price" placeholder="退款金额" required
+                 class="border-color-global-base radius-xs border-line h5 font-color-global-lighter padding-width-xs">
+        </h4>
+        <h4 class="margin-top-sm font-color-global-lighter">退款说明(选填)：
+          <textarea style="resize:none"
+                    class="padding-height-xs padding-width-xs font-color-global-lighter margin-top-xs border-line border-color-gray"
+                    placeholder="最多输入200字" rows="3" cols="40" [(ngModel)]="refundData.explain"></textarea>
+        </h4>
+      </div>
+      <div *ngIf="modalType == 'eva'">
+        <h4 class="margin-height-sm font-color-global-lighter clear-float">
+          <span class="float-left">星级：</span>
+          <span class="{{num > 0 ? 'star-active':'star'}} float-left margin-right-xs margin-left-xs"
+                (click)="num=1"></span>
+          <span class="{{num > 1 ? 'star-active':'star'}} float-left margin-right-xs" (click)="num=2"></span>
+          <span class="{{num > 2 ? 'star-active':'star'}} float-left margin-right-xs" (click)="num=3"></span>
+          <span class="{{num > 3 ? 'star-active':'star'}} float-left margin-right-xs" (click)="num=4"></span>
+          <span class="{{num > 4 ? 'star-active':'star'}} float-left" (click)="num=5"></span>
+        </h4>
+        <h4 class="margin-height-top font-color-global-lighter">评价：
+          <textarea placeholder="最多输入200字" rows="3" cols="40" style="resize:none" [(ngModel)]="evaData.explain"
+                    class="padding-height-xs padding-width-xs font-color-global-lighter margin-top-xs border-line border-color-gray"></textarea>
+        </h4>
+      </div>
+    </div>
+    <div class="modal-footer padding-height-sm">
+      <a
+        class="radius-sm font-color-global-lightest padding-height-xxs padding-width-sm h4 float-right pointer"
+        style="background-color: #e2e2e2;" (click)="showModal = false;modalType='';">
+        取消
+      </a>
+      <a
+        class="radius-sm background-color-green font-color-white padding-height-xxs padding-width-sm h4 float-right pointer margin-right-sm"
+        (click)="onSubmit()">
+        确定
+      </a>
+    </div>
+  </div>
+</div>

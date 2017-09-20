@@ -1,0 +1,47 @@
+<div class="login-header">
+  <img class="margin-left-md" src="../../../assets/img/hf.png"/>
+</div>
+<div class="layer">
+  <div class="layer-wapper wapper">
+    <div class="clear-float">
+      <div class="login-layer background-color-white float-left text-center">
+        <h1 class="login-title font-color-green">手机号登录</h1>
+        <div class="user-phone text-center h0">
+          <input type="text"
+                 class="font-color-global-lighter h3 border-line border-color-gray background-color-gray radius-sm"
+                 [(ngModel)]="loginData.phone" placeholder="请输入手机号码">
+        </div>
+        <div class="user-code text-center h0">
+          <input type="text"
+                 class="font-color-global-lighter h3 border-line border-color-gray background-color-gray radius-sm"
+                 [(ngModel)]="loginData.captcha" placeholder="请输入验证码">
+          <span class="h3 font-color-green pointer" *ngIf="!showTitle" (click)="getCode()">获取验证码</span>
+          <span class="h3 font-color-green" *ngIf="showTitle">{{title}}</span>
+        </div>
+        <div class="user-submit text-center h0">
+          <a class="h2 inline-block user-login radius-sm background-color-green font-color-white padding-height-xxs pointer"
+             (click)="login()">确定</a>
+        </div>
+      </div>
+      <div class="layer-right float-left background-color-green">
+        <div class="layer-right-top padding-width-sm h0">　
+          <img src="../../../assets/img/icon_round.png"/>
+          <span class="h4 font-color-white margin-left-xs">欢迎登录合肥市互联网医院康复中心</span>
+        </div>
+        <div class="layer-right-bottom h0 padding-width-sm">
+          <img src="../../../assets/img/icon_round.png"/>
+          <span class="h4 font-color-white margin-left-xs">登录后，您可以预约社区专项护理服务，签约家庭医生，查阅健康宣教，更多优质内容敬请浏览！</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="login-footer clear-float">
+  <p class="h5 font-color-global-lightest float-left margin-left-md padding-top-sm">
+    优护家®属于北京优护创智健康科技有限责任公司旗下品牌 邮箱：<a class="font-color-global-lightest" style="text-decoration: underline;"
+                                     href="mailto:hezuo@youhujia.com">hezuo@youhujia.com</a><br>
+    © 2015-2017 Youhujia.com 版权所有<br>
+    京ICP备15054445-1号<br>
+  </p>
+  <img class="float-right margin-right-md" src="../../../assets/img/yhj.png"/>
+</div>
